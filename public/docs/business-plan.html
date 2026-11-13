@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خطة العمل والدراسة التقنية والتشغيلية — شركة خُضرة (SARL) — فاس</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1A3D24;
+      --primary-light: #2D6A3F;
+      --secondary: #EA580C;
+      --accent: #EAB308;
+      --border: #D6D0C4;
+      --bg: #FAF8F3;
+      --text: #1C1917;
+      --muted: #5A6B5F;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background-color: #E8E4DC;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 13px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, #1A3D24, #2D6A3F);
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      border-bottom: 2px solid var(--accent);
+    }
+    .no-print-bar .title { font-weight: 800; font-size: 14px; color: #FEF08A; }
+    .no-print-bar .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      font-family: inherit;
+    }
+    .btn-primary { background: var(--secondary); color: white; }
+    .btn-secondary { background: white; color: var(--primary); }
+    .page-container { max-width: 210mm; margin: 20px auto; padding: 0 10px; }
+    .sheet {
+      background: white;
+      border-radius: 14px;
+      padding: 26px 30px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+    .cover-header {
+      background: linear-gradient(135deg, #1A3D24 0%, #2D6A3F 100%);
+      color: white;
+      padding: 20px 24px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      border-bottom: 4px solid var(--accent);
+    }
+    .cover-header h1 { font-size: 20px; font-weight: 900; color: #FFFFFF; margin-bottom: 4px; }
+    .cover-header .subtitle { font-size: 12.5px; color: #FEF08A; font-weight: 700; }
+    .doc-tag {
+      display: inline-block;
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #F59E0B;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--primary);
+      border-right: 4px solid var(--secondary);
+      padding-right: 10px;
+      margin: 16px 0 8px;
+    }
+    p, li { font-size: 12.5px; color: #292524; }
+    ul, ol { padding-right: 20px; margin-bottom: 10px; }
+    li { margin-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 12px; }
+    th, td { border: 1px solid var(--border); padding: 6.5px 10px; text-align: right; }
+    th { background-color: #1A3D24; color: #FFFFFF; font-weight: 800; }
+    tr:nth-child(even) td { background-color: #FAF8F3; }
+    .highlight-row td { background-color: #FEF3C7 !important; font-weight: 800; color: #1A3D24; }
+    .footer-sign {
+      margin-top: 16px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    @media print {
+      body { background: white; }
+      .no-print-bar { display: none !important; }
+      .page-container { max-width: 100%; margin: 0; padding: 0; }
+      .sheet { box-shadow: none; border: none; padding: 0; margin-bottom: 0; page-break-after: always; }
+      .sheet:last-child { page-break-after: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print-bar">
+    <div class="title">📘 خطة العمل والدراسة التقنية والتشغيلية (A4) — شركة خُضرة (SARL)</div>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ طباعة / حفظ كـ PDF (A4)</button>
+      <a class="btn btn-secondary" href="/">العودة للمتجر</a>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <section class="sheet">
+      <div class="cover-header">
+        <span class="doc-tag">الوثيقة 02 — الدراسة التقنية للمنصة الرقمية وخطة التشغيل الميداني</span>
+        <h1>خطة العمل والدراسة التقنية — شركة خُضرة (SARL)</h1>
+        <div class="subtitle">بنية برمجية متكاملة (PWA + Cloud ERP + GPS) واستراتيجية التوزيع السريع بمدينة فاس</div>
+      </div>
+
+      <h2>1. البنية المعمارية للمنصة الرقمية (Tech Stack & Product MVP)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>المكوّن التقني</th>
+            <th>التقنية المعتمدة</th>
+            <th>القيمة المضافة للمشروع</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>الواجهة الأمامية</strong></td>
+            <td><code>React 19 + TypeScript + Tailwind CSS</code></td>
+            <td>أداء فائق، بنية برمجية آمنة، وسرعة تحميل أقل من ثانيتين على شبكات الجيل الرابع.</td>
+          </tr>
+          <tr>
+            <td><strong>تطبيق الجوال الفوري</strong></td>
+            <td><code>PWA (Progressive Web App)</code></td>
+            <td>تثبيت فوري على شاشات هواتف Android و iOS بضغطة زر دون استهلاك ذاكرة الهاتف.</td>
+          </tr>
+          <tr>
+            <td><strong>قاعدة البيانات والمزامنة</strong></td>
+            <td><code>Supabase (PostgreSQL) + Realtime</code></td>
+            <td>مزامنة لحظية للطلبات والتقييمات مع نظام <code>Fallback</code> محلي لضمان استمرارية العمل.</td>
+          </tr>
+          <tr>
+            <td><strong>الاستضافة وشبكة التوزيع</strong></td>
+            <td><code>Cloudflare Pages / Vercel CDN</code></td>
+            <td>استضافة سحابية فائقة السرعة بتكلفة تشغيلية ثابتة <code>~0 د.م/شهر</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>2. منظومة الأمن السيبراني وحماية الطلبات (6 طبقات حماية)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>الطبقة</th>
+            <th>التقنية المعتمدة</th>
+            <th>الهدف التشغيلي</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td><strong>Cloudflare Turnstile</strong></td><td>حظر الروبوتات والطلبات الوهمية الآلية (Anti-Bot).</td></tr>
+          <tr><td><strong>2</strong></td><td><strong>Rate Limiting</strong></td><td>سقف أمان (3 طلبات كحد أقصى في الساعة لكل مستخدم).</td></tr>
+          <tr><td><strong>3</strong></td><td><strong>Cooldown System</strong></td><td>فترة تهدئة ذكية بين الطلبات المتتالية لمنع الإرسال العشوائي.</td></tr>
+          <tr><td><strong>4</strong></td><td><strong>Idempotency Keys</strong></td><td>منع تكرار تسجيل نفس الطلب عند ضعف الإنترنت لدى الزبون.</td></tr>
+          <tr><td><strong>5</strong></td><td><strong>Input Sanitization</strong></td><td>تطهير المدخلات برمجياً ضد هجمات XSS و SQL Injection.</td></tr>
+          <tr><td><strong>6</strong></td><td><strong>SHA-256 Admin PIN + RLS</strong></td><td>تشفير الدخول للوحة الإدارة مع سياسات أمان قواعد البيانات (Row-Level Security).</td></tr>
+        </tbody>
+      </table>
+
+      <h2>3. الوحدات الوظيفية المبتكرة والميزة التنافسية</h2>
+      <ul>
+        <li><strong>محرك الأوزان الذكي (Smart Weight Engine):</strong> اختيار الكميات بالكيلوغرام بدقة داخل السلة مع حساب لحظي للسعر وشريط التوصيل المجاني.</li>
+        <li><strong>صناديق العائلة الأسبوعية:</strong> باقات مسبقة الإعداد ترفع متوسط قيمة السلة (<code>AOV</code>) بنسبة 40% إلى 60%.</li>
+        <li><strong>التوصيل الجغرافي التفاعلي (Leaflet + GPS):</strong> خريطة تفاعلية تعرض مركز التوزيع بطريق إيموزار ونطاق التوصيل السريع (4.5 كم) والشامل (8.5 كم) مع التقاط إحداثيات العميل آلياً.</li>
+        <li><strong>تعدد وسائل الدفع:</strong> الدفع نقداً عند الاستلام (<code>COD</code>) أو التحويل البنكي لـ 6 بنوك ومؤسسات وطنية مع إرفاق صورة الوصل مباشرة.</li>
+        <li><strong>نظام الإدارة واللوحة المالية (Mini-ERP):</strong> متابعة الطلبات بتحديث صوتي، طباعة ملصق الشحن الحراري <code>Bordereau 80mm</code>، واللوحة المالية مع تصدير <code>CSV</code>.</li>
+      </ul>
+
+      <div class="footer-sign">
+        <span>شركة خُضرة للتجارة الإلكترونية واللوجستيك (SARL) — فاس</span>
+        <span>الصفحة 1 / 2</span>
+      </div>
+    </section>
+
+    <section class="sheet">
+      <h2>4. الخطة التشغيلية واللوجستية بمدينة فاس (Daily Workflow & Route Batching)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>التوقيت اليومي</th>
+            <th>المرحلة التشغيلية</th>
+            <th>الإجراءات المعيارية المعتمدة (SOP)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>05:30 – 07:30</strong></td>
+            <td><strong>التموين الصباحي المباشر</strong></td>
+            <td>شراء الخضر والفواكه الطازجة من سوق الجملة بنسودة والضيعات المجاورة حسب الطلبات المسجلة.</td>
+          </tr>
+          <tr>
+            <td><strong>07:30 – 09:00</strong></td>
+            <td><strong>الفرز، التوزين، والتوضيب</strong></td>
+            <td>الفرز اليدوي للنخب الأول، التوزين الإلكتروني، التعبئة في صناديق عازلة <code>Cooler Boxes 50L</code>، وإلصاق الـ <code>Bordereau</code>.</td>
+          </tr>
+          <tr>
+            <td><strong>09:00 – 13:00</strong></td>
+            <td><strong>الجولة الصباحية للتوصيل</strong></td>
+            <td>انطلاق مسارات التوصيل المجمّعة (Batching) لتغطية طلبات الصباح وتوريدات الـ B2B للمطاعم والمقاهي.</td>
+          </tr>
+          <tr>
+            <td><strong>16:00 – 20:30</strong></td>
+            <td><strong>الجولة المسائية والتسوية</strong></td>
+            <td>توصيل طلبات المساء للعائلات والموظفين، تليها التسوية اليومية لمبالغ التحصيل النقدي (COD).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>5. مؤشرات الأداء القياسية (KPIs) وإدارة المخاطر</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>الفئة</th>
+            <th>المؤشر القياسي (KPI)</th>
+            <th>هدف الشهر 3</th>
+            <th>هدف الشهر 12</th>
+            <th>الأهمية التشغيلية</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>النمو</strong></td><td>عدد الطلبات اليومية</td><td>12 طلباً/يوم</td><td>28 طلباً/يوم</td><td>تجاوز نقطة التعادل وتوسيع الحصة السوقية.</td></tr>
+          <tr><td><strong>النمو</strong></td><td>معدل تكرار الشراء (Retention)</td><td>&gt; 40%</td><td>&gt; 60%</td><td>ولاء العائلات الفاسية للطلبيات الأسبوعية.</td></tr>
+          <tr><td><strong>المالية</strong></td><td>متوسط قيمة السلة (AOV)</td><td>115 د.م</td><td>125+ د.م</td><td>مدعوم بصناديق العائلة وشريط التوصيل المجاني.</td></tr>
+          <tr><td><strong>التشغيل</strong></td><td>زمن التحضير والتوصيل</td><td>&lt; 50 دقيقة</td><td>&lt; 40 دقيقة</td><td>بفضل تجميع المسارات عبر قطاعات فاس الأربعة.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>6. الإطار القانوني والمؤسسي للمشروع (الصيغة المعتمدة: شركة SARL)</h2>
+      <ul>
+        <li><strong>إبرام عقود العمل القانونية (CNSS):</strong> تمنح صيغة <code>SARL</code> الأهلية القانونية لتشغيل السائقين ومساعدي الفرز والتوضيب بعقود عمل رسمية، وهو ما لا يتيحه نظام المقاول الذاتي.</li>
+        <li><strong>التعاقد التجاري مع المؤسسات (B2B) والفوترة الضريبية:</strong> القدرة على التعاقد مع الفنادق، المطاعم، والمقاهي بفاس وإصدار فواتير رسمية (<code>ICE / RC</code>) دون السقف السنوي المحدود للمقاول الذاتي.</li>
+        <li><strong>الأهلية الكاملة لصناديق التمويل والاحتضان:</strong> مطابقة تامة لشروط <strong>Technopark Fès</strong> وصندوق <strong>Innov Invest (Tamwilcom)</strong> و<strong>INDH</strong>.</li>
+        <li><strong>فصل الذمة المالية وقابلية دخول المستثمرين:</strong> حماية الذمة المالية الشخصية للمؤسس وإمكانية فتح رأس المال للشركاء عبر الحصص الاجتماعية (<code>Parts Sociales</code>).</li>
+      </ul>
+
+      <div class="footer-sign">
+        <span>شركة خُضرة للتجارة الإلكترونية واللوجستيك (SARL) — فاس</span>
+        <span>الصفحة 2 / 2</span>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

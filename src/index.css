@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #F2EEE4;
+    color: #1A1814;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    font-family: 'Tajawal', 'Cairo', system-ui, -apple-system, sans-serif;
+    background-color: #F2EEE4;
+    color: #1A1814;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* تحسين استجابة أزرار اللمس لمنع أي تأخير وإزالة اللون الرمادي عند النقر */
+  button,
+  [role="button"],
+  a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* إخفاء شريط التمرير عند الحاجة مع الحفاظ على إمكانية السحب */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* تمرير انسيابي طبيعي بدون تعليق أو تقطيع */
+  .snap-always {
+    scroll-snap-stop: normal !important;
+  }
+
+  /* تخصيص نوافذ ومؤشرات الخريطة التفاعلية */
+  .leaflet-popup-content-wrapper {
+    border-radius: 1rem !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+    padding: 0 !important;
+    border: 1px solid #E2D5B7 !important;
+    overflow: hidden;
+  }
+  .leaflet-popup-content {
+    margin: 10px 14px !important;
+    line-height: 1.5 !important;
+    font-family: inherit !important;
+  }
+  .leaflet-popup-tip {
+    background: white !important;
+  }
+
+  /* إخفاء أسماء الأحياء عند تصغير الخريطة مع الحفاظ على ظهور النقاط البرتقالية */
+  .hide-map-labels .map-location-label {
+    display: none !important;
+  }
+}
+
+@keyframes scrollTopFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scroll-top-enter {
+  animation: scrollTopFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scrollTopArrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.5px);
+  }
+}
+
+.scroll-top-arrow-bounce {
+  animation: scrollTopArrowBounce 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top-enter,
+  .scroll-top-arrow-bounce {
+    animation: none;
+  }
+}

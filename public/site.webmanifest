@@ -1,0 +1,62 @@
+{
+  "name": "خُضرة - متجر الخضار والفواكه الطازجة",
+  "short_name": "خُضرة",
+  "description": "تسوق أفضل الخضروات، الفواكه، الألبان، ومنتجات البقالة اليومية مع خدمة التوصيل السريع إلى باب منزلك في مدينة فاس ونواحيها.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFDF8",
+  "theme_color": "#2E7D32",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "/images/icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "تصفح المنتجات",
+      "short_name": "المنتجات",
+      "description": "تصفح جميع المنتجات المتوفرة",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/images/icons/web-app-manifest-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "سلة المشتريات",
+      "short_name": "السلة",
+      "description": "عرض سلة المشتريات",
+      "url": "/?cart=true",
+      "icons": [
+        {
+          "src": "/images/icons/web-app-manifest-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "categories": ["shopping", "food", "lifestyle"],
+  "prefer_related_applications": false
+}

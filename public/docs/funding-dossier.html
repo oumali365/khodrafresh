@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ملف التمويل والاحتضان الرسمي — شركة خُضرة (SARL) — فاس</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1A3D24;
+      --primary-light: #2D6A3F;
+      --secondary: #EA580C;
+      --accent: #EAB308;
+      --border: #D6D0C4;
+      --bg: #FAF8F3;
+      --text: #1C1917;
+      --muted: #5A6B5F;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background-color: #E8E4DC;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 13px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, #1A3D24, #2D6A3F);
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      border-bottom: 2px solid var(--accent);
+    }
+    .no-print-bar .title {
+      font-weight: 800;
+      font-size: 14px;
+      color: #FEF08A;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .no-print-bar .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--secondary);
+      color: white;
+      box-shadow: 0 3px 10px rgba(234,88,12,0.35);
+    }
+    .btn-primary:hover {
+      background: #C2410C;
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+    }
+    .page-container {
+      max-width: 210mm;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+    .sheet {
+      background: white;
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+    .cover-header {
+      background: linear-gradient(135deg, #1A3D24 0%, #2D6A3F 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border-bottom: 4px solid var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .cover-header h1 {
+      font-size: 22px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .cover-header .subtitle {
+      font-size: 13px;
+      color: #FEF08A;
+      font-weight: 700;
+    }
+    .badge-box {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(234,179,8,0.45);
+      padding: 8px 14px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+    .doc-tag {
+      display: inline-block;
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #F59E0B;
+      font-weight: 800;
+      font-size: 11.5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--primary);
+      border-right: 4px solid var(--secondary);
+      padding-right: 10px;
+      margin: 18px 0 10px;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--primary-light);
+      margin: 14px 0 8px;
+    }
+    p, li {
+      font-size: 12.5px;
+      color: #292524;
+    }
+    ul, ol {
+      padding-right: 20px;
+      margin-bottom: 10px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px;
+      font-size: 12px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      text-align: right;
+    }
+    th {
+      background-color: #1A3D24;
+      color: #FFFFFF;
+      font-weight: 800;
+    }
+    tr:nth-child(even) td {
+      background-color: #FAF8F3;
+    }
+    .highlight-row td {
+      background-color: #FEF3C7 !important;
+      font-weight: 800;
+      color: #1A3D24;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .kpi-card {
+      background: #FAF8F3;
+      border: 1.5px solid rgba(45,106,63,0.22);
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .kpi-card .val {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--primary-light);
+      display: block;
+    }
+    .kpi-card .lbl {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .footer-sign {
+      margin-top: 20px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    @media print {
+      body {
+        background: white;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .page-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .sheet {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-bottom: 0;
+        page-break-after: always;
+      }
+      .sheet:last-child {
+        page-break-after: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط التحكم العلوي (لا يظهر في الطباعة) -->
+  <div class="no-print-bar">
+    <div class="title">
+      <span>🌿 الملف الرسمي للتمويل والاحتضان — شركة خُضرة (SARL)</span>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="window.print()">
+        🖨️ طباعة / حفظ كملف PDF (A4)
+      </button>
+      <a class="btn btn-secondary" href="/">
+        العودة للمتجر
+      </a>
+    </div>
+  </div>
+
+  <div class="page-container">
+
+    <!-- ==================== الوثيقة 01: Pitch Deck ==================== -->
+    <section class="sheet">
+      <div class="cover-header">
+        <div>
+          <span class="doc-tag">الوثيقة 01 / 03 — العرض التقديمي المختصر (Pitch Deck)</span>
+          <h1>شركة خُضرة للتجارة الإلكترونية واللوجستيك (SARL)</h1>
+          <div class="subtitle">من المزارع وسوق الجملة بفاس إلى باب المستهلك في 60 دقيقة • AgriTech & Quick-Commerce</div>
+        </div>
+        <div class="badge-box">
+          <div>📍 المدينة: فاس، المغرب</div>
+          <div>⚙️ المنصة الرقمية: منجزة 100% (MVP)</div>
+          <div>⚖️ الصيغة القانونية: شركة SARL</div>
+        </div>
+      </div>
+
+      <h2>1. المشكلة في السوق الفاسي والحل الرقمي المبتكر</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 48%;">المشكلة لدى العائلة الفاسية والمطاعم</th>
+            <th style="width: 52%;">الحل الذي تقدمه منصة «خُضرة»</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>تعدد الوسطاء:</strong> ارتفاع أسعار التجزئة بـ 30%–45% مع تراجع طراوة المنتجات.</td>
+            <td><strong>ربط مباشر من المصدر:</strong> تموين صباحي مباشر وفرز يدوي للنخب الأول فقط بأسعار عادلة.</td>
+          </tr>
+          <tr>
+            <td><strong>مشقة التسوق اليومي:</strong> ضياع 1–2 ساعة يومياً في التنقل والازدحام وتفاوت الأوزان.</td>
+            <td><strong>تطبيق فوري (PWA) بعداد أوزان ذكي:</strong> تسوق في دقيقتين بالوزن الدقيق (<code>kg</code>) أو بصناديق العائلة التوفيرية.</td>
+          </tr>
+          <tr>
+            <td><strong>عشوائية التوصيل المحلي:</strong> غياب التتبع الجغرافي وارتفاع كلفة التوصيل الفردي.</td>
+            <td><strong>تحديد الموقع بالـ GPS وتجميع المسارات (Batching):</strong> خريطة تفاعلية تغطي فاس وتخفض كلفة التوصيل بـ 60%.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>2. المؤشرات الرئيسية واقتصاديات الوحدة (Unit Economics)</h2>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="val">1.2 مليون</span>
+          <span class="lbl">سوق مدينة فاس (~250 ألف أسرة)</span>
+        </div>
+        <div class="kpi-card">
+          <span class="val">115 د.م</span>
+          <span class="lbl">متوسط قيمة السلة (AOV)</span>
+        </div>
+        <div class="kpi-card">
+          <span class="val">+27.6 د.م</span>
+          <span class="lbl">هامش المساهمة الصافي للطلب</span>
+        </div>
+        <div class="kpi-card">
+          <span class="val">10 - 12 طلب/يوم</span>
+          <span class="lbl">نقطة التعادل التشغيلي</span>
+        </div>
+      </div>
+
+      <h2>3. الملخص المالي للسنة الأولى والاحتياج التمويلي</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>الفترة</th>
+            <th>متوسط الطلبات/يوم</th>
+            <th>الإيرادات الشهرية</th>
+            <th>المصاريف الكلية</th>
+            <th>صافي الربح الشهري</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>الشهر 1 (الانطلاق)</strong></td>
+            <td>6 طلبات</td>
+            <td>17,940 د.م</td>
+            <td>15,200 د.م</td>
+            <td><strong>+2,740 د.م</strong></td>
+          </tr>
+          <tr>
+            <td><strong>الشهر 3 (التعادل والنمو)</strong></td>
+            <td>12 طلباً</td>
+            <td>35,880 د.م</td>
+            <td>26,900 د.م</td>
+            <td><strong>+8,980 د.م</strong></td>
+          </tr>
+          <tr>
+            <td><strong>الشهر 6 (الاستقرار)</strong></td>
+            <td>18 طلباً</td>
+            <td>53,820 د.م</td>
+            <td>38,200 د.م</td>
+            <td><strong>+15,620 د.م</strong></td>
+          </tr>
+          <tr>
+            <td><strong>الشهر 12 (التوسع المحلي)</strong></td>
+            <td>28 طلباً</td>
+            <td>87,360 د.م</td>
+            <td>59,600 د.م</td>
+            <td><strong>+27,760 د.م</strong></td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>إجمالي السنة الأولى</strong></td>
+            <td><strong>متوسط 18 طلباً/يوم</strong></td>
+            <td><strong>676,650 د.م</strong></td>
+            <td><strong>479,600 د.م</strong></td>
+            <td><strong>+197,050 د.م (صافي 29.1%)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="footer-sign">
+        <span>ملف التمويل والاحتضان: Technopark Fès • Tamwilcom • INDH</span>
+        <span>الصفحة 1 / 3</span>
+      </div>
+    </section>
+
+    <!-- ==================== الوثيقة 02: الدراسة التقنية والتشغيلية ==================== -->
+    <section class="sheet">
+      <span class="doc-tag">الوثيقة 02 / 03 — الدراسة التقنية للمنصة (MVP) وخطة التشغيل الميداني</span>
+      <h2>1. الدراسة التقنية للمنصة الرقمية المنجزة (Étude Technique & MVP)</h2>
+      <p>تم تطوير وبناء منصة <strong>«خُضرة»</strong> الرقمية بالكامل وفق أحدث معايير هندسة البرمجيات، مما يُزيل أي مخاطرة تقنية أمام لجان التمويل ويضمن جاهزية فورية للتشغيل:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>المكوّن التقني</th>
+            <th>التقنية المعتمدة</th>
+            <th>القيمة المضافة للمشروع</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>الواجهة الأمامية وتطبيق الجوال</strong></td>
+            <td><code>React 19 + TypeScript + PWA</code></td>
+            <td>تثبيت فوري على شاشات هواتف <code>Android</code> و <code>iOS</code> وسرعة تحميل أقل من ثانيتين.</td>
+          </tr>
+          <tr>
+            <td><strong>قاعدة البيانات والمزامنة اللحظية</strong></td>
+            <td><code>Supabase (PostgreSQL) + Realtime</code></td>
+            <td>مزامنة فورية للطلبات والتقييمات مع نظام <code>Fallback</code> محلي لضمان عدم توقف الخدمة.</td>
+          </tr>
+          <tr>
+            <td><strong>منظومة الأمن السيبراني (6 طبقات)</strong></td>
+            <td><code>Cloudflare Turnstile + SHA-256 + RLS</code></td>
+            <td>حظر الروبوتات والطلبات الوهمية، <code>Rate Limiting</code>، وتشفير لوحة الإدارة.</td>
+          </tr>
+          <tr>
+            <td><strong>نظام الخرائط والتوصيل الجغرافي</strong></td>
+            <td><code>Leaflet + OpenStreetMap + GPS</code></td>
+            <td>تحديد موقع العميل بالـ GPS والتحقق الآلي من التغطية داخل فاس (4.5 كم سريع / 8.5 كم شامل).</td>
+          </tr>
+          <tr>
+            <td><strong>نظام الإدارة واللوحة المالية (Mini-ERP)</strong></td>
+            <td>لوحة عمليات + <code>Bordereau 80mm</code> + مالية</td>
+            <td>متابعة الطلبات، طباعة ملصقات الشحن الحرارية، حساب الأرباح ونقطة التعادل، وتصدير <code>CSV</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>2. الميزة التنافسية التقنية مقارنة بالحلول الجاهزة</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>المعيار التقني</th>
+            <th>المتاجر التقليدية (Shopify / WooCommerce)</th>
+            <th>منصة «خُضرة» المطوّرة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>تطبيق جوال فوري (PWA) + عداد أوزان ذكي (kg)</td>
+            <td>يتطلب إضافات واشتراكات مدفوعة</td>
+            <td><strong>مُدمج بالكامل مجاناً</strong></td>
+          </tr>
+          <tr>
+            <td>خريطة تغطية فاس + التحقق الآلي عبر GPS</td>
+            <td>غير متوفر افتراضياً</td>
+            <td><strong>مُدمج بالكامل</strong></td>
+          </tr>
+          <tr>
+            <td>لوحة مالية تحليلية + طباعة ملصق Bordereau 80mm</td>
+            <td>يتطلب نظام ERP خارجي</td>
+            <td><strong>مُدمج بالكامل</strong></td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>التكلفة الشهرية الثابتة للبرمجيات</strong></td>
+            <td>300 إلى 1,500 د.م / شهر</td>
+            <td><strong>~0 د.م / شهر</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. الخطة التشغيلية وتجميع المسارات بمدينة فاس (Route Batching)</h2>
+      <ul>
+        <li><strong>05:30 – 07:30 (التموين المباشر):</strong> اقتناء الخضر والفواكه الطازجة من سوق الجملة بنسودة والضيعات المجاورة حسب الطلبات المسجلة.</li>
+        <li><strong>07:30 – 09:00 (الفرز والتوضيب الصحي):</strong> الفرز اليدوي، الوزن الإلكتروني، التعبئة في صناديق عازلة <code>Cooler Boxes 50L</code> (طبقة سفلى للثقيل، وسطى للورقيات، عليا للفواكه الحساسة)، وإلصاق الـ <code>Bordereau</code>.</li>
+        <li><strong>تجميع المسارات عبر 4 قطاعات في فاس:</strong> تجميع 3–4 طلبات متجاورة في كل جولة لتخفيض تكلفة التوصيل إلى <strong>8–10 دراهم للطلب</strong> (القطاع الأوسط/طريق إيموزار/الأطلس/أكدال/النرجس/سايس، القطاع الغربي، القطاع الشمالي، والقطاع الشرقي).</li>
+      </ul>
+
+      <h2>4. الإطار القانوني المعتمد: شركة ذات مسؤولية محدودة (SARL)</h2>
+      <ul>
+        <li><strong>إبرام عقود العمل القانونية (CNSS):</strong> تتيح صيغة <code>SARL</code> تشغيل السائقين ومساعدي الفرز بعقود عمل رسمية، عكس نظام المقاول الذاتي.</li>
+        <li><strong>التعاقد التجاري مع المؤسسات (B2B):</strong> إصدار فواتير ضريبية رسمية (<code>ICE / RC</code>) للفنادق والمطاعم والمقاهي بفاس دون سقف محدود لرقم المعاملات.</li>
+        <li><strong>الأهلية لصناديق التمويل والاحتضان:</strong> مطابقة تامة لشروط <strong>Technopark Fès</strong> وصندوق <strong>Innov Invest (Tamwilcom)</strong> و<strong>INDH</strong>.</li>
+      </ul>
+
+      <div class="footer-sign">
+        <span>شركة خُضرة للتجارة الإلكترونية واللوجستيك (SARL) — فاس</span>
+        <span>الصفحة 2 / 3</span>
+      </div>
+    </section>
+
+    <!-- ==================== الوثيقة 03: الدراسة المالية والميزانية ==================== -->
+    <section class="sheet">
+      <span class="doc-tag">الوثيقة 03 / 03 — الدراسة المالية الموحدة والبرنامج الاستثماري</span>
+      <h2>1. البرنامج الاستثماري وتجهيزات الانطلاق (Investment Budget)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>بند الاستثمار والتجهيز</th>
+            <th>انطلاق ذاتي خفيف</th>
+            <th>تمويل مؤسسي متكامل</th>
+            <th>الغرض التشغيلي</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. المنصة الرقمية والتطبيق الفوري (MVP)</strong></td>
+            <td>مُنجز (مساهمة تقنية)</td>
+            <td>مُنجز (قيمته ~35,000 د.م)</td>
+            <td>متجر وتطبيق PWA + لوحة مالية + خرائط GPS</td>
+          </tr>
+          <tr>
+            <td><strong>2. تجهيز مقر الفرز والتبريد الصحي</strong></td>
+            <td>2,500 د.م</td>
+            <td>35,000 د.م</td>
+            <td>خزائن تبريد، طاولات فرز، رفوف، موازين، وصناديق عازلة 50L</td>
+          </tr>
+          <tr>
+            <td><strong>3. وسائل النقل والتوصيل</strong></td>
+            <td>1,200 د.م (شراكة)</td>
+            <td>30,000 د.م</td>
+            <td>دراجة ثلاثية العجلات مبردة (Tricycle) أو دراجتين ناريتين</td>
+          </tr>
+          <tr>
+            <td><strong>4. العتاد المعلوماتي والطباعة الحرارية</strong></td>
+            <td>4,500 د.م</td>
+            <td>10,000 د.م</td>
+            <td>حاسوب إدارة المركز، طابعة ملصقات 80mm، هاتف عمل وراوتر</td>
+          </tr>
+          <tr>
+            <td><strong>5. الهوية البصرية، التغليف، والتسويق</strong></td>
+            <td>1,800 د.م</td>
+            <td>13,500 د.م</td>
+            <td>أكياس ورقية صحية، صناديق مطبوعة، وحملات إعلانية بفاس</td>
+          </tr>
+          <tr>
+            <td><strong>6. تأسيس شركة SARL ورأس المال العامل</strong></td>
+            <td>2,000 د.م</td>
+            <td>11,500 د.م</td>
+            <td>تأسيس شركة SARL (السجل التجاري والمحاسب) + سيولة التموين</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>الإجمالي النقدي المطلوب</strong></td>
+            <td><strong>12,000 د.م</strong></td>
+            <td><strong>100,000 د.م</strong></td>
+            <td><strong>جاهز للتنفيذ الفوري</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>2. التوقعات المالية لـ 3 سنوات (3-Year Financial Outlook)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>المؤشر المالي</th>
+            <th>السنة الأولى (تأسيس بفاس)</th>
+            <th>السنة الثانية (توسع + B2B)</th>
+            <th>السنة الثالثة (مكناس وصفرو)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>متوسط الطلبات اليومية</strong></td>
+            <td>6 ← 28 طلباً/يوم</td>
+            <td>35 ← 60 طلباً/يوم</td>
+            <td>70 ← 110 طلبات/يوم</td>
+          </tr>
+          <tr>
+            <td><strong>إجمالي الإيرادات السنوية</strong></td>
+            <td><strong>676,650 د.م</strong></td>
+            <td><strong>1,684,800 د.م</strong></td>
+            <td><strong>3,432,000 د.م</strong></td>
+          </tr>
+          <tr>
+            <td><strong>إجمالي المصاريف والتكاليف</strong></td>
+            <td>479,600 د.م</td>
+            <td>1,196,200 د.م</td>
+            <td>2,402,400 د.م</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>صافي الربح السنوي</strong></td>
+            <td><strong>+197,050 د.م (29.1%)</strong></td>
+            <td><strong>+488,600 د.م (29.0%)</strong></td>
+            <td><strong>+1,029,600 د.م (30.0%)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>مناصب الشغل المحدثة</strong></td>
+            <td>2 – 4 مناصب شغل</td>
+            <td>6 – 8 مناصب شغل</td>
+            <td>12 – 15 منصب شغل</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. مصفوفة تقييم وإدارة المخاطر (Risk Management)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>المخاطرة المحتملة</th>
+            <th>الأثر</th>
+            <th>خطة الوقاية والتخفيف المعتمدة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>تلف أو ذبول المنتجات الطازجة</strong></td>
+            <td>متوسط</td>
+            <td>التموين اليومي حسب الطلب (Just-in-Time)، خزائن وصناديق مبردة، وتصريف الفائض عبر صناديق العائلة اليومية.</td>
+          </tr>
+          <tr>
+            <td><strong>تكلفة التوصيل للطلبات المتفرقة</strong></td>
+            <td>عالٍ</td>
+            <td>تجميع المسارات (3–4 طلبات/جولة) عبر قطاعات فاس الأربعة + شريط تحفيزي للتوصيل المجاني يرفع قيمة السلة.</td>
+          </tr>
+          <tr>
+            <td><strong>الطلبات الوهمية أو الإلغاء</strong></td>
+            <td>متوسط</td>
+            <td>حماية <code>Cloudflare Turnstile</code> + تأكيد عبر واتساب + دعم الدفع المسبق بالتحويل البنكي مع إرفاق الوصل.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="footer-sign">
+        <span>شركة خُضرة للتجارة الإلكترونية واللوجستيك (SARL) — فاس، المغرب</span>
+        <span>الصفحة 3 / 3</span>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

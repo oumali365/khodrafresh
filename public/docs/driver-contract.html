@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عقد شراكة لتقديم خدمات التوصيل — خُضرة فاس</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #163920;
+      --secondary: #C25E12;
+      --accent: #F5D76E;
+      --border: #D1C7B7;
+      --bg: #FDFBF7;
+      --text: #1C1917;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Tajawal', 'Cairo', sans-serif;
+      background-color: #EFECE6;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 13.5px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #112616;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .no-print-bar .title {
+      font-weight: 800;
+      font-size: 15px;
+      color: #F5D76E;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .no-print-bar .actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: #C25E12;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #a84f0c;
+    }
+    .btn-secondary {
+      background: white;
+      color: #112616;
+    }
+    .btn-secondary:hover {
+      background: #f0ede6;
+    }
+    .page-container {
+      max-width: 820px;
+      margin: 25px auto;
+      background: white;
+      padding: 40px 48px;
+      border: 1px solid #DFD7C7;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border-radius: 8px;
+      position: relative;
+    }
+    .header-table {
+      width: 100%;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .header-logo {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--primary);
+      font-family: 'Cairo', sans-serif;
+    }
+    .header-logo span {
+      color: var(--secondary);
+    }
+    .header-sub {
+      font-size: 12px;
+      color: #665F52;
+      margin-top: 3px;
+    }
+    .contract-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #F4EFE6;
+      border: 1px solid #D8CFC0;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .contract-title {
+      text-align: center;
+      margin: 20px 0 16px;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #F8F5EE 0%, #EFE9DB 100%);
+      border: 1.5px solid #D8CFC0;
+      border-radius: 8px;
+    }
+    .contract-title h1 {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--primary);
+      font-family: 'Cairo', sans-serif;
+      margin-bottom: 4px;
+    }
+    .contract-title p {
+      font-size: 12px;
+      color: #665F52;
+      font-weight: 600;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+      background: #FAF7F0;
+      padding: 12px 16px;
+      border-radius: 6px;
+      border: 1px dashed #D8CFC0;
+      font-size: 12.5px;
+    }
+    .parties-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .party-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      background: #FCFAF6;
+    }
+    .party-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--primary);
+      border-bottom: 1.5px solid #E6DDCF;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      font-family: 'Cairo', sans-serif;
+    }
+    .party-row {
+      margin-bottom: 5px;
+      font-size: 12.5px;
+      color: #38332B;
+    }
+    .party-row strong {
+      color: #112616;
+    }
+    .fillable {
+      display: inline-block;
+      border-bottom: 1px dashed #7A7264;
+      min-width: 120px;
+      padding: 0 4px;
+      color: #112616;
+      font-weight: 700;
+    }
+    .article {
+      margin-bottom: 18px;
+      border-right: 3px solid var(--secondary);
+      padding-right: 12px;
+    }
+    .article-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: 'Cairo', sans-serif;
+      margin-bottom: 6px;
+    }
+    .article-body {
+      font-size: 13px;
+      color: #2F2B24;
+      line-height: 1.7;
+    }
+    .article-body ul {
+      margin: 6px 20px 6px 0;
+      list-style-type: square;
+    }
+    .article-body li {
+      margin-bottom: 4px;
+    }
+    .signatures-section {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 2px solid #E0D7C7;
+      page-break-inside: avoid;
+    }
+    .signatures-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 15px;
+    }
+    .sig-box {
+      border: 1px solid #D5CBB9;
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 160px;
+      background: #FAF8F2;
+      position: relative;
+    }
+    .sig-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 12px;
+      font-family: 'Cairo', sans-serif;
+    }
+    .stamp-box {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      width: 90px;
+      height: 90px;
+      border: 1.5px dashed #B8AB96;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #8C7E6A;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #112616;
+      color: #F5D76E;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 9999;
+    }
+    @media print {
+      body {
+        background: white;
+        font-size: 12px;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .page-container {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        max-width: 100%;
+        border-radius: 0;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 15mm 12mm 15mm 12mm;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط التحكم للطباعة والنسخ (مخفي عند الطباعة) -->
+  <div class="no-print-bar">
+    <div class="title">
+      <span>📄</span>
+      <span>عقد شراكة لتقديم خدمات التوصيل — نموذج جاهز للطباعة والتحويل إلى PDF</span>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="window.print()">
+        🖨️ طباعة أو حفظ كـ PDF (A4)
+      </button>
+      <button class="btn btn-secondary" onclick="copyFullContract()">
+        📋 نسخ نص العقد
+      </button>
+      <a href="/" class="btn btn-secondary">
+        ⬅️ العودة للمتجر
+      </a>
+    </div>
+  </div>
+
+  <div class="page-container" id="contract-content">
+    
+    <!-- الترويسة الرسمية -->
+    <table class="header-table">
+      <tr>
+        <td style="text-align: right;">
+          <div class="header-logo">خُضـرة <span>.</span> فاس</div>
+          <div class="header-sub">شركة خُضرة للتجارة الإلكترونية والتوصيل السريع — فاس، المغرب</div>
+        </td>
+        <td style="text-align: left; vertical-align: top;">
+          <div class="contract-badge">وثيقة قانونية رسمية</div>
+          <div style="font-size: 11px; color: #7A7264; margin-top: 5px;">المملكة المغربية • سنة 2026</div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- عنوان العقد -->
+    <div class="contract-title">
+      <h1>عقد شراكة لتقديم خدمات التوصيل</h1>
+      <p>تنظيم العلاقة المهنية المستقلة بين متجر خُضرة وسائق التوصيل بنطاق عمالة فاس</p>
+    </div>
+
+    <!-- بيانات العقد المرجعية -->
+    <div class="meta-grid">
+      <div><strong>رقم العقد:</strong> KH-DRV-2026-<span class="fillable">________</span></div>
+      <div><strong>مكان التوقيع:</strong> مدينة فاس، المغرب</div>
+      <div><strong>تاريخ التوقيع:</strong> <span class="fillable">____ / ____ / 2026</span></div>
+      <div><strong>مدة العقد:</strong> 6 أشهر قابلة للتجديد برضى الطرفين</div>
+    </div>
+
+    <!-- أطراف العقد -->
+    <div class="parties-grid">
+      <!-- الطرف الأول -->
+      <div class="party-box">
+        <div class="party-title">الطرف الأول (المشغّل):</div>
+        <div class="party-row"><strong>الشركة:</strong> شركة خُضرة للتجارة الإلكترونية</div>
+        <div class="party-row"><strong>العنوان:</strong> طريق إيموزار / بنسودة — فاس</div>
+        <div class="party-row"><strong>السجل التجاري:</strong> <span class="fillable">____________</span></div>
+        <div class="party-row"><strong>التمثيل القانوني:</strong> السيد المدير العام لشركة خُضرة</div>
+        <div class="party-row"><strong>الهاتف:</strong> +212 704 274 830</div>
+      </div>
+
+      <!-- الطرف الثاني -->
+      <div class="party-box">
+        <div class="party-title">الطرف الثاني (سائق التوصيل):</div>
+        <div class="party-row"><strong>الاسم الكامل:</strong> <span class="fillable">______________________</span></div>
+        <div class="party-row"><strong>رقم ب.ت.و (CIN):</strong> <span class="fillable">________________</span></div>
+        <div class="party-row"><strong>العنوان بمدينة فاس:</strong> <span class="fillable">__________________</span></div>
+        <div class="party-row"><strong>الهاتف المحمول:</strong> <span class="fillable">__________________</span></div>
+        <div class="party-row"><strong>وسيلة النقل:</strong> [ ] دراجة نارية&nbsp;&nbsp;[ ] سيارة&nbsp;&nbsp;[ ] دراجة هوائية</div>
+        <div class="party-row"><strong>رقم اللوحة:</strong> <span class="fillable">__________________</span></div>
+      </div>
+    </div>
+
+    <!-- البنود والمواد -->
+    <div class="article">
+      <div class="article-title">المادة 1: موضوع العقد</div>
+      <div class="article-body">
+        يلتزم الطرف الثاني بتقديم خدمات توصيل طلبات زبائن متجر خُضرة الإلكتروني بعمالة فاس، متسلماً المنتجات ومعتنياً بسلامتها، وتسليمها للعميل وفق أفضل المعايير المهنية والشروط والأحكام المفصلة بهذا الاتفاق.
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">المادة 2: نطاق العمل ونقاط الانطلاق</div>
+      <div class="article-body">
+        <ul>
+          <li><strong>2.1 نقطة الاستلام:</strong> مركز توزيع خُضرة أو سوق الجملة بنسودة — فاس.</li>
+          <li><strong>2.2 نطاق التغطية:</strong> يشمل كافة قطاعات فاس الأربعة: (المنطقة الشمالية: الأطلس، النرجس، سايس — المنطقة الوسطى: طريق إيموزار، فلورنس، أكدال — المنطقة الجنوبية: بنسودة، عين هارون، زواغة — المنطقة الشرقية: الزهور، طريق صفرو، فاس البالي).</li>
+          <li><strong>2.3 التحصيل المالي (COD):</strong> استلام المبالغ النقدية كاملة عند التسليم وتسليمها لممثل الإدارة يومياً.</li>
+          <li><strong>2.4 السرعة والالتزام:</strong> متوسط مدة التسليم المستهدفة لا يتعدى 45 دقيقة من زمن استلام الطلب.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">المادة 3: أوقات وجولات العمل</div>
+      <div class="article-body">
+        <ul>
+          <li>نظام العمل المتفق عليه: [ ] دوام كامل&nbsp;&nbsp;&nbsp;[ ] دوام جزئي&nbsp;&nbsp;&nbsp;[ ] حسب الطلب والذروة.</li>
+          <li>الجولة الصباحية: من الساعة 09:00 إلى 13:00 | الجولة المسائية: من الساعة 16:00 إلى 21:00.</li>
+          <li>يلتزم السائق بإشعار الإدارة قبل 24 ساعة على الأقل في حال تعذر الحضور لأي عذر مشروع.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">المادة 4: التعويضات المالية والحوافز</div>
+      <div class="article-body">
+        <ul>
+          <li><strong>التعويض الأساسي:</strong> مبلغ قدره (<span class="fillable">____</span>) درهم مغربي عن كل إرسالية ناجحة مستوفاة.</li>
+          <li><strong>مكافأة الأداء العالي:</strong> علاوة 20 درهماً لكل 10 طلبات بتقييم 5 نجوم، وعلاوة 50 درهماً أسبوعية عند إتمام 30 توصيلة فأكثر بنجاح.</li>
+          <li><strong>دورة صرف المستحقات:</strong> [ ] أسبوعياً&nbsp;&nbsp;[ ] كل 15 يوماً&nbsp;&nbsp;[ ] نهاية كل شهر ميلادي.</li>
+          <li><strong>الخصومات الجزائية:</strong> يخصم من المستحقات أي تلف ناتج عن الإهمال، أو التأخر غير المبرر لأكثر من 60 دقيقة، مع الإلزام الفوري بأداء مبالغ الطلبات المحصلة نقدياً بدون نقصان.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">المادة 5: التزامات وحقوق الطرفين</div>
+      <div class="article-body">
+        <ul>
+          <li>يلتزم السائق باستعمال الصناديق العازلة والمحافظة على النظافة التامة للمنتجات وسرية بيانات الزبائن.</li>
+          <li>تلتزم شركة خُضرة ببرمجة الطلبات بعدالة، وتوفير الدعم الميداني المباشر عبر واتساب، وصرف المستحقات في آجالها المحددة.</li>
+          <li>يحظر العمل مع أي منافس مباشر بنفس النطاق الجغرافي طيلة سريان هذا العقد.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-title">المادة 6: حل النزاعات والقانون الواجب التطبيق</div>
+      <div class="article-body">
+        يخضع هذا العقد لمقتضيات القانون والتشريع المغربي الجاري به العمل. وفي حال نشوء أي خلاف حول تأويله أو تنفيذه، يسعى الطرفان لحله ودياً؛ وفي حال تعذر ذلك، يؤول الاختصاص للمحكمة الابتدائية المختصة بمدينة فاس.
+      </div>
+    </div>
+
+    <!-- التوقيعات والشهود -->
+    <div class="signatures-section">
+      <div style="font-size: 13px; font-weight: 800; color: #112616; text-align: center; margin-bottom: 5px;">
+        حرر في نظيرين أصليين بمدينة فاس، بتاريخ: ____ / ____ / 2026
+      </div>
+      <div style="font-size: 11px; color: #73695A; text-align: center;">
+        (توقيع مسبوق بعبارة "قرئ وصودق عليه" بخط اليد)
+      </div>
+
+      <div class="signatures-grid">
+        <div class="sig-box">
+          <div class="sig-title">عن شركة خُضرة (المشغّل)</div>
+          <div style="font-size: 12px; color: #574F41;">
+            الصفة: المدير العام<br>
+            التوقيع:
+          </div>
+          <div class="stamp-box">
+            ختم وتوقيع<br>شركة خُضرة
+          </div>
+        </div>
+
+        <div class="sig-box">
+          <div class="sig-title">الطرف الثاني (سائق التوصيل)</div>
+          <div style="font-size: 12px; color: #574F41;">
+            الاسم الكامل:<br>
+            رقم البطاقة الوطنية (CIN):<br>
+            التوقيع:
+          </div>
+          <div class="stamp-box" style="border-radius: 8px;">
+            توقيع ومصادقة<br>السائق
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="toast" class="toast">تم نسخ نص العقد بنجاح إلى الحافظة!</div>
+
+  <script>
+    function copyFullContract() {
+      const text = document.getElementById('contract-content').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>

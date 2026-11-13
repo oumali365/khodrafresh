@@ -1,0 +1,19 @@
+# ============================================================
+# ملف: .well-known/security.txt – معيار أمان حديث
+# ============================================================
+
+Contact: mailto:security@khodrafresh.vercel.app
+Contact: https://wa.me/212704274830
+Contact: https://khodrafresh.vercel.app/contact
+
+Expires: 2027-12-31T23:59:59.000Z
+
+Encryption: https://khodrafresh.vercel.app/.well-known/pgp-key.txt
+
+Acknowledgments: https://khodrafresh.vercel.app/thanks
+
+Policy: https://khodrafresh.vercel.app/security-policy
+
+Preferred-Languages: ar, en
+
+Canonical: https://khodrafresh.vercel.app/.well-known/security.txt

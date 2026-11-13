@@ -1,0 +1,22 @@
+# ============================================================
+# ملف: security.txt – سياسة أمان متجر خُضرة
+# ============================================================
+
+# جهة الاتصال للإبلاغ عن ثغرات أمنية
+Contact: mailto:security@khodrafresh.vercel.app
+Contact: https://wa.me/212704274830
+
+# تاريخ انتهاء صلاحية السياسة
+Expires: 2027-12-31T23:59:59.000Z
+
+# تشفير الاتصال
+Encryption: https://khodrafresh.vercel.app/.well-known/pgp-key.txt
+
+# سياسة الإفصاح عن الثغرات
+Acknowledgement: https://khodrafresh.vercel.app/security-policy
+
+# القواعد الأمنية
+Canonical: https://khodrafresh.vercel.app/
+
+# إشعار حقوق الطبع والنشر
+Policy: https://khodrafresh.vercel.app/privacy

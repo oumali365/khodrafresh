@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الدليل التقني الشامل وهندسة المنصة وآليات الاشتغال — متجر خُضرة (Khodra Fès)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1A3D24;
+      --primary-dark: #112818;
+      --primary-light: #2D6A3F;
+      --secondary: #EA580C;
+      --accent: #EAB308;
+      --accent-light: #FEF08A;
+      --border: #D6D0C4;
+      --border-light: #EBE6DC;
+      --bg: #FAF8F4;
+      --sheet-bg: #FFFFFF;
+      --text: #1C1917;
+      --text-muted: #5A6B5F;
+      --code-bg: #F4F1EA;
+      --highlight: #FEF3C7;
+      --blue-accent: #0284C7;
+      --purple-accent: #7C3AED;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background-color: #E8E4DC;
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 12.5px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ══════ شريط الإجراءات العلوي (يختفي أثناء الطباعة) ══════ */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, #1A3D24 0%, #2D6A3F 100%);
+      color: white;
+      padding: 10px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      border-bottom: 2px solid var(--accent);
+    }
+    .no-print-bar .title-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .no-print-bar .badge-tech {
+      background: rgba(234, 179, 8, 0.2);
+      border: 1px solid var(--accent);
+      color: var(--accent-light);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .no-print-bar .title {
+      font-weight: 900;
+      font-size: 14px;
+      color: #FFFFFF;
+    }
+    .no-print-bar .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 15px;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      font-family: inherit;
+      transition: all 0.15s ease-in-out;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary {
+      background: var(--secondary);
+      color: white;
+      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.35);
+    }
+    .btn-primary:hover { background: #C2410C; }
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: #F5F3EF; }
+
+    /* ══════ حاوية الأوراق بتنسيق A4 ══════ */
+    .page-container {
+      max-width: 210mm;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+
+    .sheet {
+      background: var(--sheet-bg);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    /* ══════ رأس الغلاف الفخم ══════ */
+    .cover-header {
+      background: linear-gradient(135deg, #1A3D24 0%, #204E2F 50%, #2D6A3F 100%);
+      color: white;
+      padding: 20px 24px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      border-bottom: 4px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+    .cover-header::before {
+      content: '⚡ KHODRA ARCHITECTURE 2026';
+      position: absolute;
+      left: 14px;
+      bottom: 10px;
+      font-family: 'Fira Code', monospace;
+      font-size: 9.5px;
+      font-weight: 600;
+      color: rgba(254, 240, 138, 0.35);
+      letter-spacing: 1.5px;
+      direction: ltr;
+    }
+    .cover-header .doc-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #F59E0B;
+      font-weight: 800;
+      font-size: 10.5px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+    .cover-header h1 {
+      font-size: 19px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+    .cover-header .subtitle {
+      font-size: 12px;
+      color: #FEF08A;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+    .cover-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 10.5px;
+      color: #E2E8F0;
+    }
+    .cover-meta span strong { color: #FEF08A; }
+
+    /* ══════ العناوين والفقرات ══════ */
+    h2 {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--primary);
+      border-right: 4px solid var(--secondary);
+      padding-right: 10px;
+      margin: 18px 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    h2:first-of-type { margin-top: 4px; }
+    h3 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #1E293B;
+      margin: 12px 0 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    p {
+      font-size: 12px;
+      color: #292524;
+      line-height: 1.6;
+      margin-bottom: 7px;
+    }
+    ul, ol {
+      padding-right: 18px;
+      margin-bottom: 8px;
+    }
+    li {
+      margin-bottom: 3px;
+      font-size: 11.8px;
+      color: #334155;
+    }
+
+    /* ══════ الجداول التقنية ══════ */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 12px;
+      font-size: 11.5px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      border: 1px solid var(--border-light);
+      padding: 6px 10px;
+      text-align: right;
+      vertical-align: top;
+    }
+    th {
+      background-color: #1A3D24;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 11.5px;
+    }
+    tr:nth-child(even) td { background-color: #FAF8F4; }
+    .badge-pill {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .badge-green { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
+    .badge-orange { background: #FFEDD5; color: #9A3412; border: 1px solid #FDBA74; }
+    .badge-blue { background: #E0F2FE; color: #075985; border: 1px solid #7DD3FC; }
+    .badge-purple { background: #F3E8FF; color: #6B21A8; border: 1px solid #D8B4FE; }
+    .badge-amber { background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
+
+    /* ══════ بطاقات لوحة التحكم الإدارية (تطابق التصميم الأصلي) ══════ */
+    .admin-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 10px 0 14px;
+    }
+    .admin-card {
+      background: #0E2615;
+      color: #F8FAFC;
+      border-radius: 10px;
+      padding: 10px 12px;
+      border: 1.5px solid rgba(45, 106, 63, 0.6);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 115px;
+    }
+    .admin-card.card-orders {
+      background: linear-gradient(135deg, #163920 0%, #0E2615 100%);
+      border-color: #2D6A3F;
+    }
+    .admin-card.card-fleet {
+      background: linear-gradient(135deg, #122A26 0%, #091715 100%);
+      border-color: #0D9488;
+    }
+    .admin-card.card-finance {
+      background: linear-gradient(135deg, #2A1708 0%, #120A03 100%);
+      border-color: #EA580C;
+    }
+    .admin-card.card-docs {
+      background: linear-gradient(135deg, #122A1A 0%, #0A1A0F 100%);
+      border-color: #10B981;
+    }
+    .admin-card.card-marketing {
+      background: linear-gradient(135deg, #0C2D48 0%, #071E30 100%);
+      border-color: #0284C7;
+    }
+    .admin-card.card-pricing {
+      background: linear-gradient(135deg, #1C3A27 0%, #0A1A0F 100%);
+      border-color: #10B981;
+    }
+    .admin-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .admin-card-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .admin-card-badge {
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .admin-card-title {
+      font-size: 13px;
+      font-weight: 900;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .admin-card-sublabel {
+      font-size: 10px;
+      color: #94A3B8;
+      font-family: 'Fira Code', monospace;
+    }
+    .admin-card-desc {
+      font-size: 11px;
+      color: #CBD5E1;
+      line-height: 1.45;
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+
+    /* ══════ الصناديق التوضيحية والرسوم الهندسية ══════ */
+    .callout {
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      border-right: 4px solid var(--primary);
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin: 9px 0;
+      font-size: 11.5px;
+    }
+    .callout-amber {
+      background: #FFFBEB;
+      border-color: #FDE68A;
+      border-right-color: var(--secondary);
+    }
+    .callout-emerald {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+      border-right-color: #16A34A;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0 12px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 8px 0 12px;
+    }
+    .card-box {
+      background: #FAF8F4;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 12px;
+    }
+    .card-box h4 {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .card-box p {
+      font-size: 11px;
+      color: #475569;
+      margin-bottom: 0;
+      line-height: 1.45;
+    }
+
+    /* ══════ خطوات ومسارات التدفق (Workflow Pipeline) ══════ */
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 8px 0 12px;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+    .step-num {
+      width: 22px;
+      height: 22px;
+      background: var(--primary);
+      color: #FEF08A;
+      font-weight: 900;
+      font-size: 11px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-content { flex: 1; }
+    .step-title {
+      font-weight: 800;
+      font-size: 11.8px;
+      color: #0F172A;
+      margin-bottom: 2px;
+    }
+    .step-desc {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    /* ══════ شجرة الملفات والأكواد البرمجية ══════ */
+    .code-tree {
+      background: #1E293B;
+      color: #E2E8F0;
+      font-family: 'Fira Code', monospace;
+      font-size: 10.5px;
+      direction: ltr;
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin: 8px 0 12px;
+      line-height: 1.5;
+      border: 1px solid #334155;
+    }
+    .code-tree .comment { color: #94A3B8; font-style: italic; }
+    .code-tree .folder { color: #F59E0B; font-weight: 700; }
+    .code-tree .file { color: #38BDF8; }
+    .code-tree .highlight { color: #4ADE80; font-weight: 700; }
+
+    /* ══════ تذييل الصفحة ══════ */
+    .sheet-footer {
+      margin-top: 16px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10.5px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .sheet-footer .tagline { color: var(--primary); font-weight: 800; }
+    .sheet-footer .page-number { font-family: 'Fira Code', monospace; color: #64748B; }
+
+    /* ══════ قواعد الطباعة الدقيقة (A4) ══════ */
+    @media print {
+      body { background: white; font-size: 11px; }
+      .no-print-bar { display: none !important; }
+      .page-container { max-width: 100%; margin: 0; padding: 0; }
+      .sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 14px 18px !important;
+        margin-bottom: 0 !important;
+        page-break-after: always;
+      }
+      .sheet:last-child { page-break-after: auto; }
+      .cover-header { padding: 14px 18px; margin-bottom: 12px; }
+      h2 { font-size: 13.5px; margin: 12px 0 6px; }
+      p, li { font-size: 11px; line-height: 1.5; }
+      table { font-size: 10.5px; margin: 5px 0 8px; }
+      th, td { padding: 4px 6px; }
+      .admin-card { min-height: 95px; padding: 7px 10px; }
+      .admin-card-desc { font-size: 10px; }
+      .code-tree { font-size: 9.5px; padding: 8px; }
+      .card-box { padding: 6px 8px; }
+      .flow-step { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط الإجراءات العلوي -->
+  <div class="no-print-bar">
+    <div class="title-box">
+      <span class="badge-tech">دليل معماري مستقل</span>
+      <div class="title">🌿 الدليل التقني وهندسة المنصة وآليات الاشتغال (Khodra Architecture & Management Guide)</div>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ طباعة / حفظ كـ PDF (A4)</button>
+      <button class="btn btn-secondary" onclick="navigator.clipboard.writeText(window.location.href); alert('تم نسخ رابط الوثيقة بنجاح!');">📋 نسخ الرابط</button>
+      <a class="btn btn-secondary" href="/">🛒 العودة للمتجر</a>
+    </div>
+  </div>
+
+  <div class="page-container">
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- الورقة 1: الرؤية المعمارية والترسانة التقنية المتقدمة -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section class="sheet">
+      <div class="cover-header">
+        <span class="doc-tag">الوثيقة الهندسية المستقلة • المرجع الشامل لمالك المتجر وفريق التطوير</span>
+        <h1>الهندسة المعمارية وآليات الاشتغال لمتجر «خُضرة»</h1>
+        <div class="subtitle">دليل شامل ومختصر: بنية المنصة، وحدات الإدارة الست، تدفق البيانات، وإضافة التحديثات بأمان وبدون تشتيت</div>
+        <div class="cover-meta">
+          <span><strong>النمط البرمجي:</strong> PWA + Single Page App (React 19)</span>
+          <span><strong>النطاق الجغرافي:</strong> فاس، المملكة المغربية</span>
+          <span><strong>السحابة:</strong> Supabase PostgreSQL (Realtime & RLS)</span>
+          <span><strong>الإصدار:</strong> Version 3.5.0 Production</span>
+        </div>
+      </div>
+
+      <h2>1. الرؤية الهندسية والمعمارية العامة (High-Level System Design)</h2>
+      <p>
+        تم بناء متجر <strong>«خُضرة»</strong> كمنصة تجارة سريعة رائدة (AgriTech & Quick-Commerce) تربط سلاسل التوريد الزراعية الطازجة بفاس بالمستهلكين والمطاعم مباشرة. صُممت المنصة بنظام تطبيق الصفحة الواحدة (SPA) وتطبيق ويب تقدمي (PWA) فائق الاستجابة يدعم العربية أصلاً (RTL-First) ومتوافق 100% مع الهواتف الذكية.
+      </p>
+
+      <div class="grid-3">
+        <div class="card-box" style="border-top: 3px solid #16A34A;">
+          <h4>⚡ سرعة استجابة فائقة</h4>
+          <p>واجهة تفاعلية مبنية بـ React 19 تتيح التصفح وإضافة السلة والفلترة بأقل من نصف ثانية دون إعادة تحميل الصفحة.</p>
+        </div>
+        <div class="card-box" style="border-top: 3px solid #EA580C;">
+          <h4>🛡️ مرونة هجينة ضد الانقطاع</h4>
+          <p>تكامل بين قاعدة Supabase السحابية والتخزين المحلي LocalStorage لحماية السلة والطلبات حتى عند ضعف الشبكة.</p>
+        </div>
+        <div class="card-box" style="border-top: 3px solid #0284C7;">
+          <h4>🗺️ تجميع لوجستي ذكي بفاس</h4>
+          <p>توزيع تلقائي لعناوين الزبائن على 4 قطاعات رئيسية (شمال، وسط، جنوب، شرق) لتسريع الجولات وخفض تكلفة الوقود.</p>
+        </div>
+      </div>
+
+      <h2>2. الترسانة والتقنيات البرمجية المتقدمة (Advanced Tech Stack)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 20%;">الطبقة البرمجية</th>
+            <th style="width: 25%;">التقنية المعتمدة</th>
+            <th style="width: 15%;">الإصدار</th>
+            <th>الدور الوظيفي والقيمة المضافة في المشروع</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>الواجهة (Frontend)</strong></td>
+            <td><strong>React 19 + TypeScript</strong></td>
+            <td><span class="badge-pill badge-green">v19.0 / v5.8</span></td>
+            <td>مكونات معيارية فائقة الأداء وتدقيق صارم للأنواع يمنع أخطاء الحسابات الرياضية في الأوزان والأسعار.</td>
+          </tr>
+          <tr>
+            <td><strong>محرك البناء</strong></td>
+            <td><strong>Vite 6 + TSX</strong></td>
+            <td><span class="badge-pill badge-blue">v6.2.3</span></td>
+            <td>بيئة بناء سريعة تدعم التحميل الكسول (Lazy Loading) للمودالات الإدارية لضمان خفة متجر المستهلك.</td>
+          </tr>
+          <tr>
+            <td><strong>التصميم والأنماط</strong></td>
+            <td><strong>Tailwind CSS v4</strong></td>
+            <td><span class="badge-pill badge-amber">v4.1.14</span></td>
+            <td>تنسيقات عصرية متوافقة مع الاتجاه العربي RTL مع خطي Cairo وTajawal وهوية فاس الخضراء.</td>
+          </tr>
+          <tr>
+            <td><strong>السحابة والبيانات</strong></td>
+            <td><strong>Supabase (PostgreSQL)</strong></td>
+            <td><span class="badge-pill badge-green">v2.39+</span></td>
+            <td>قاعدة بيانات علائقية سحابية، مزامنة حية (WebSockets)، أمان مشدد على مستوى الصف (RLS)، وتخزين الإيصالات.</td>
+          </tr>
+          <tr>
+            <td><strong>سلايدر التقييمات</strong></td>
+            <td><strong>Swiper 14 Engine</strong></td>
+            <td><span class="badge-pill badge-purple">v14.3.0</span></td>
+            <td>سلايدر RTL مخصص مع أسهم تنقل ثابتة، نقاط تفاعلية ذكية، وعرض تدريجي بدفعات (4، 8، 12 تقييماً).</td>
+          </tr>
+          <tr>
+            <td><strong>الخرائط والمواقع</strong></td>
+            <td><strong>Leaflet & OpenStreetMap</strong></td>
+            <td><span class="badge-pill badge-blue">v1.9.4</span></td>
+            <td>تحديد إحداثيات GPS لمنازل العملاء وتوجيه السائقين بدون تكاليف اشتراكات خارجية باهظة.</td>
+          </tr>
+          <tr>
+            <td><strong>التطبيق التقدمي</strong></td>
+            <td><strong>Service Worker PWA</strong></td>
+            <td><span class="badge-pill badge-orange">Standard</span></td>
+            <td>إمكانية تثبيت المتجر كأيقونة تطبيق على شاشة الهاتف مع تخزين كاش للعمل في وضع عدم الاتصال.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="sheet-footer">
+        <span class="tagline">🌿 متجر خُضرة — الدليل التقني المستقل</span>
+        <span class="page-number">ورقة 1 من 4 • الرؤية المعمارية والترسانة التقنية</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- الورقة 2: البنية الداخلية لإدارة المتجر (وحدات التحكم الست) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section class="sheet">
+      <h2>3. البنية الداخلية لإدارة المتجر (Store Management Core Modules)</h2>
+      <p>
+        تمثل الإدارة الداخلية لمتجر خُضرة <strong>غرفة العمليات المركزية (Operations Nerve Center)</strong>. صُممت في صورة وحدات معيارية منفصلة ومتكاملة لحوكمة التشغيل اليومي، التسعير، والتوزيع الميداني:
+      </p>
+
+      <!-- شبكة بطاقات الإدارة الست تطابق تماماً الواجهة الفعلية للوحة التحكم -->
+      <div class="admin-cards-grid">
+
+        <!-- 1. إدارة الطلبات -->
+        <div class="admin-card card-orders">
+          <div class="admin-card-head">
+            <div class="admin-card-icon" style="color: #EAB308;">🛍️</div>
+            <span class="admin-card-badge" style="background: rgba(234, 88, 12, 0.25); color: #FDBA74; border-color: #EA580C;">جديد / محدثة</span>
+          </div>
+          <div>
+            <div class="admin-card-title">
+              <span>إدارة الطلبات</span>
+              <span class="admin-card-sublabel">Commandes</span>
+            </div>
+            <p class="admin-card-desc">
+              متابعة وتجهيز الطلبات الحية، الفرز حسب الحالة، وطباعة بوليصة الشحن الحرارية المعتمدة (Bordereau 80mm) وتسوية الدفع عند الاستلام.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. مسارات التوصيل والفريق -->
+        <div class="admin-card card-fleet">
+          <div class="admin-card-head">
+            <div class="admin-card-icon" style="color: #F5D76E;">🛵</div>
+            <span class="admin-card-badge" style="background: rgba(20, 184, 166, 0.2); color: #5EEAD4; border-color: #14B8A6;">4 مناطق</span>
+          </div>
+          <div>
+            <div class="admin-card-title">
+              <span>مسارات التوصيل والفريق</span>
+              <span class="admin-card-sublabel">Flotte</span>
+            </div>
+            <p class="admin-card-desc">
+              تخطيط جولات التوزيع في فاس، تعيين سائقي الفريق الداخلي، وإسناد الطلبات لكباتن تطبيقات التوصيل السريع (Fast-App Couriers).
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. اللوحة المالية -->
+        <div class="admin-card card-finance">
+          <div class="admin-card-head">
+            <div class="admin-card-icon" style="color: #F5D76E;">📊</div>
+            <span class="admin-card-badge" style="background: rgba(234, 88, 12, 0.25); color: #FDBA74; border-color: #EA580C;">Tableau FR</span>
+          </div>
+          <div>
+            <div class="admin-card-title">
+              <span>اللوحة المالية والتوقعات</span>
+              <span class="admin-card-sublabel">Finance</span>
+            </div>
+            <p class="admin-card-desc">
+              مراقبة رقم المعاملات اليومي (CA)، حساب عتبة المردودية (Seuil de rentabilité)، ومخططات تدفقات الخزينة (Trésorerie) لـ 12 شهراً.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. وثائق وعقود المشروع -->
+        <div class="admin-card card-docs">
+          <div class="admin-card-head">
+            <div class="admin-card-icon" style="color: #EAB308;">📄</div>
+            <span class="admin-card-badge" style="background: rgba(16, 185, 129, 0.2); color: #6EE7B7; border-color: #10B981;">A4 PDF</span>
+          </div>
+          <div>
+            <div class="admin-card-title">
+              <span>وثائق وعقود المشروع</span>
+              <span class="admin-card-sublabel">Contrats SARL</span>
+            </div>
+            <p class="admin-card-desc">
+              الأرشيف القانوني والمؤسساتي: ملف التمويل والمنح، Pitch Deck للمستثمرين، عقود السائق والتوريد والشراكة، والدليل التقني.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5. النشر والتسويق -->
+        <div class="admin-card card-marketing">
+          <div class="admin-card-head">
+            <div class="admin-card-icon" style="color: #FEF08A;">📢</div>
+            <span class="admin-card-badge" style="background: rgba(2, 132, 199, 0.2); color: #7DD3FC; border-color: #0284C7;">1-Click</span>
+          </div>
+          <div>
+            <div class="admin-card-title">
+              <span>النشر والتسويق الاجتماعي</span>
+              <span class="admin-card-sublabel">Marketing</span>
+            </div>
+            <p class="admin-card-desc">
+              توليد وإرسال عروض اليوم وسلات التوفير آلياً بنقرة واحدة إلى WhatsApp وشبكات التواصل الاجتماعي لزيادة المبيعات اليومية.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6. التسعير وتوقع الطلب -->
+        <div class="admin-card card-pricing">
+          <div class="admin-card-head">
+            <div class="admin-card-icon" style="color: #FEF08A;">💲</div>
+            <span class="admin-card-badge" style="background: rgba(16, 185, 129, 0.2); color: #6EE7B7; border-color: #10B981;">120+ منتج</span>
+          </div>
+          <div>
+            <div class="admin-card-title">
+              <span>التسعير وتوقع الطلب</span>
+              <span class="admin-card-sublabel">Tarification JIT</span>
+            </div>
+            <p class="admin-card-desc">
+              متابعة أسعار سوق الجملة بنسودة اليومية، ضبط هوامش الربح لكل كيلوغرام، ونظام التنبؤ الذكي بحجم المشتريات لتقليص التلف إلى 0%.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <h3>⚙️ آليات الاشتغال التقني للوحة الإدارة:</h3>
+      <div class="grid-2">
+        <div class="callout callout-emerald">
+          <strong>🔐 حماية الدخول وتغيير الرمز السري (PIN Security):</strong>
+          <p style="margin-top: 3px; font-size: 11px;">
+            وصول محمي بنظام التحقق السري برمز PIN، مع نافذة فورية تتيح لمالك المتجر تعديل الرمز السري وحفظه مشفراً في التخزين الآمن.
+          </p>
+        </div>
+        <div class="callout callout-emerald">
+          <strong>🔔 نظام الإشعارات والتنبيهات الصوتية الحية:</strong>
+          <p style="margin-top: 3px; font-size: 11px;">
+            تنبيه صوتي فوري وتحديث تلقائي لعدد الطلبات المعلقة كل 40 ثانية (<code>useNewOrdersNotifier</code>) مع شارات نبضية برتقالية.
+          </p>
+        </div>
+        <div class="callout callout-amber">
+          <strong>🖨️ طباعة بوالص الشحن المباشرة (ESC/POS 80mm):</strong>
+          <p style="margin-top: 3px; font-size: 11px;">
+            قوالب طباعة حرارية مهيأة مباشرة للمتصفح بحجم 80 مم تتضمن رقم الطلب، الحي، العنوان، والمنتجات لتسليمها فورياً للسائق.
+          </p>
+        </div>
+        <div class="callout callout-amber">
+          <strong>📲 الإرسال الذكي إلى WhatsApp (Dispatch Links):</strong>
+          <p style="margin-top: 3px; font-size: 11px;">
+            توليد روابط WhatsApp ديناميكية تنقل ملخص الطلب ورابط موقع العميل على Google Maps إلى السائق أو الزبون بنقرة واحدة.
+          </p>
+        </div>
+      </div>
+
+      <div class="sheet-footer">
+        <span class="tagline">🌿 متجر خُضرة — الدليل التقني المستقل</span>
+        <span class="page-number">ورقة 2 من 4 • البنية الداخلية لإدارة المتجر ووحداتها الست</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- الورقة 3: خريطة الكود، دورة حياة الطلب، والتقييمات -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section class="sheet">
+      <h2>4. هيكلية الكود وخريطة المجلدات (Codebase Architecture)</h2>
+      <div class="code-tree">
+<span class="folder">src/</span>
+├── <span class="highlight">App.tsx</span>                     <span class="comment"># الموجه المركزي والتحكم في النوافذ والسلة</span>
+├── <span class="highlight">types.ts</span>                    <span class="comment"># القاموس الموحد لكافة الأنواع (Product, Order, Driver, Zone)</span>
+├── <span class="folder">components/</span>
+│   ├── <span class="folder">shop/</span>                   <span class="comment"># عناصر المتجر (ProductCard, CategoryBar, ReviewsSection, Banner)</span>
+│   ├── <span class="folder">cart/</span>                   <span class="comment"># سلة الشراء، مجاميع الكيلوغرامات، وحساب تكاليف الشحن</span>
+│   ├── <span class="folder">checkout/</span>               <span class="comment"># نافذة الطلب، خريطة فاس، وفترات التوصيل (Delivery Slots)</span>
+│   └── <span class="folder">admin/</span>                  <span class="comment"># لوحة التحكم المركزية (Orders, Fleet, Finance, Documents, Marketing, Pricing)</span>
+├── <span class="folder">services/</span>
+│   ├── <span class="file">supabaseService.ts</span>          <span class="comment"># عمليات قاعدة البيانات (CRUD)، المزامنة الفورية، والتقييمات</span>
+│   └── <span class="file">securityService.ts</span>          <span class="comment"># مفاتيح عدم التكرار (Idempotency) وفحص الهواتف والتعقيم</span>
+├── <span class="folder">data/</span>                       <span class="comment"># ثوابت أحياء فاس (deliveryZones.ts) وإعدادات النظام</span>
+└── <span class="folder">utils/</span>                      <span class="comment"># تنسيق الدرهم المغربي، حساب المسافات، والتواريخ</span>
+<span class="folder">public/docs/</span>                    <span class="comment"># الوثائق المستقلة بصيغة A4 PDF (العمارة، التمويل، العقود)</span>
+      </div>
+
+      <h2>5. دورة حياة الطلب والبيانات (Order State Machine)</h2>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">الاختيار وتحديث السلة (Selection & Storage)</div>
+            <div class="step-desc">
+              الزبون يحدد الكمية (بالكيلوغرام أو الحبة)، ويتم تحديث السلة فورياً وحفظ نسختها في <code>localStorage</code> لضمان عدم فقدانها.
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">التعرف الجغرافي على الحي (Zone Detection)</div>
+            <div class="step-desc">
+              تطابق دالة <code>detectAddressZone()</code> عنوان العميل مع أحياء فاس الـ 4 لتحديد قطاع التوزيع واختيار فترة التسليم.
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">الحماية ومفتاح عدم التكرار (Idempotency Guard)</div>
+            <div class="step-desc">
+              إنشاء مفتاح تشفيري فريد مع بصمة جهاز لمنع إرسال طلبات مزدوجة عند النقر المتكرر، مع تدقيق صحة رقم الهاتف المغربي.
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">المزامنة مع Supabase والإشعار الفوري (Cloud Sync)</div>
+            <div class="step-desc">
+              حفظ الطلب في جدول <code>orders</code> وظهوره فورياً في لوحة الإدارة مع تنبيه صوتي وإتاحة خيار الإرسال عبر WhatsApp.
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">التوجيه الميداني والتسليم (Dispatch & COD)</div>
+            <div class="step-desc">
+              إسناد الطلب لسائق المتجر أو كابتن سريع، طباعة بوليصة الشحن، وتسليم الطلب للزبون وتحصيل المبلغ نقداً عند الاستلام.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>6. محرك التقييمات وشارات الثقة (Reviews Engine)</h2>
+      <div class="grid-2">
+        <div class="card-box">
+          <h4>🎯 منع التكرار بالمعرف الفريد (Deduplication)</h4>
+          <p>
+            تصفية التقييمات عبر <code>new Map(reviews.map(r => [r.id, r]))</code> لمنع ظهور التقييم نفسه أكثر من مرة عند تكرار عمليات الجلب.
+          </p>
+        </div>
+        <div class="card-box">
+          <h4>🔄 التنقل بدفعات منتظمة (4 / 8 / 12)</h4>
+          <p>
+            عرض 4 تقييمات أولية مع 4 نقاط تنقل أنيقة، وعند النقر على «عرض المزيد» تظهر 4 إضافية (إلى 8 ثم 12) مع التحول لـ «عرض أقل».
+          </p>
+        </div>
+      </div>
+
+      <div class="sheet-footer">
+        <span class="tagline">🌿 متجر خُضرة — الدليل التقني المستقل</span>
+        <span class="page-number">ورقة 3 من 4 • هيكلية الكود، دورة الطلب، ومحرك التقييمات</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- الورقة 4: قواعد البيانات، الأمان، وخارطة التطوير -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section class="sheet">
+      <h2>7. مخطط قاعدة البيانات السحابية (Database Schema)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 20%;">اسم الجدول</th>
+            <th style="width: 30%;">الحقول الرئيسية</th>
+            <th>الوظيفة وقواعد الوصول (RLS Policy)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>products</code></td>
+            <td><code>id, name, category, price, type, stock, is_available</code></td>
+            <td>قراءة عامة للمتسوقين وتعديل محصور لمدير المتجر عبر جلسة الإدارة.</td>
+          </tr>
+          <tr>
+            <td><code>orders</code></td>
+            <td><code>order_code, customer_name, phone, address, zone, items(jsonb), total</code></td>
+            <td>إدراج متاح للزبائن (Insert-only)، والقراءة والتحديث محصورة للإدارة والسائق المعني.</td>
+          </tr>
+          <tr>
+            <td><code>reviews</code></td>
+            <td><code>id, name, city, comment, rating, created_at, is_approved</code></td>
+            <td>قراءة عامة للتقييمات المعتمدة وإضافة محمية ضد السبام مع إشراف الإدارة.</td>
+          </tr>
+          <tr>
+            <td><code>store_drivers</code></td>
+            <td><code>id, name, phone, vehicle_type, status, commission</code></td>
+            <td>جدول داخلي خاص بتنظيم أسطول التوصيل وعمولات الجولات في أحياء فاس.</td>
+          </tr>
+          <tr>
+            <td><code>audit_logs</code></td>
+            <td><code>id, action, entity, user_id, payload, timestamp</code></td>
+            <td>سجل تدقيق أمني غير قابل للتعديل يوثق كافة العمليات الحساسة وتغيير الأسعار.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>8. طبقات الأمان الست وحماية البيانات (6-Layer Security)</h2>
+      <div class="grid-3">
+        <div class="card-box" style="border-top: 3px solid #16A34A;">
+          <h4>1. أمان مستوى الصف (RLS)</h4>
+          <p>عزل بيانات الزبائن وأرقام الهواتف في Postgres لمنع استعراضها من أطراف خارجية.</p>
+        </div>
+        <div class="card-box" style="border-top: 3px solid #0284C7;">
+          <h4>2. منع التكرار (Idempotency)</h4>
+          <p>مفاتيح تشفير عشوائية تمنع إدراج طلب مكرر عند النقر المزدوج أو إعادة الاتصال.</p>
+        </div>
+        <div class="card-box" style="border-top: 3px solid #EA580C;">
+          <h4>3. تعقيم المدخلات (Sanitization)</h4>
+          <p>تصفية النصوص والأسماء من وسوم HTML والأكواد الضارة لمنع هجمات XSS وSQLi.</p>
+        </div>
+        <div class="card-box" style="border-top: 3px solid #7C3AED;">
+          <h4>4. كبح الطلبات (Rate Limiting)</h4>
+          <p>تحديد عدد العمليات المسموحة لكل متصفح لحماية السحابة من البوتات وهجمات الحرمان.</p>
+        </div>
+        <div class="card-box" style="border-top: 3px solid #EAB308;">
+          <h4>5. النسخ البديل (Local Fallback)</h4>
+          <p>استمرارية حفظ السلة والطلبات محلياً مع توجيه WhatsApp بديل عند ضعف السحابة.</p>
+        </div>
+        <div class="card-box" style="border-top: 3px solid #10B981;">
+          <h4>6. سلامة الأنواع (Strict Types)</h4>
+          <p>تدقيق TypeScript الصارم لانعدام أخطاء الذاكرة والعمليات الحسابية الخاطئة.</p>
+        </div>
+      </div>
+
+      <h2>9. القواعد الذهبية وخارطة التطوير المستقبلية (Roadmap)</h2>
+      <div class="callout callout-amber">
+        <strong style="color: #92400E;">⚡ القواعد الذهبية لصاحب المتجر وفريق التطوير:</strong>
+        <p style="margin: 3px 0 0; font-size: 11px; color: #78350F;">
+          1. <strong>مرجع موحد:</strong> أي حقل جديد يضاف أولاً في <code>src/types.ts</code>.<br>
+          2. <strong>طبقة مركزية:</strong> عمليات السحابة تتم عبر <code>src/services/supabaseService.ts</code> حصراً.<br>
+          3. <strong>تجزئة الأكواد:</strong> استمر في استخدام <code>React.lazy()</code> للمودالات الثقيلة لضمان سرعة تحميل المتجر.
+        </p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 28%;">الميزة والتحديث المستقبلي</th>
+            <th style="width: 32%;">مكان الإضافة في الكود</th>
+            <th>القيمة المضافة للمتجر</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>بوابات الدفع الإلكتروني (CMI / Stripe)</strong></td>
+            <td>طريقة دفع جديدة في <code>types.ts</code> ومسار تحقق آمن في الخادم.</td>
+            <td>تمكين الدفع البنكي المباشر وتقليل التعامل بالنقد الورقي (COD).</td>
+          </tr>
+          <tr>
+            <td><strong>تتبع السائق المباشر (GPS Tracking)</strong></td>
+            <td>قناة <code>supabase.channel</code> لبث إحداثيات السائق الحية لخريطة العميل.</td>
+            <td>رفع ثقة الزبون وتقليص اتصالات "أين وصل طلبي؟" بنسبة 70%.</td>
+          </tr>
+          <tr>
+            <td><strong>بوابة الموردين وفلاحي بنسودة</strong></td>
+            <td>واجهة مستقلة <code>components/supplier/</code> لتحديث الكميات فجر كل يوم.</td>
+            <td>أتمتة المطابقة بين طلبيات المتجر وتوريدات الفلاحين بسوق الجملة.</td>
+          </tr>
+          <tr>
+            <td><strong>نقاط الولاء وإشعارات الويب (Push)</strong></td>
+            <td>جدول <code>coupons</code> في Supabase وخدمة Web Push Messaging.</td>
+            <td>تشجيع الشراء الأسبوعي وإشعار العميل فور انطلاق شحنته.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="sheet-footer">
+        <span class="tagline">🌿 متجر خُضرة — الدليل التقني المستقل</span>
+        <span class="page-number">ورقة 4 من 4 • قواعد البيانات، الأمان، وخارطة التطوير</span>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

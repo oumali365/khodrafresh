@@ -1,0 +1,1 @@
+export { AdminInventoryPanel } from './AdminInventoryPanel';

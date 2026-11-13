@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- ─── العنوان والوصف الأساسي (SEO) ─── -->
+    <title>خُضرة - متجر الخضار والفواكه الطازجة</title>
+    <meta name="description" content="متجر خُضرة لتسوق الخضروات والفواكه الطازجة ومنتجات البقالة مع التوصيل السريع في مدينة فاس ونواحيها والدفع عند الاستلام في المغرب" />
+    <meta name="keywords" content="خضرة, خضروات طازجة, فواكه, توصيل خضار, فاس, بقالة أونلاين, خضرة فريش, توصيل فاس" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://khodrafresh.vercel.app/" />
+    
+    <!-- ─── PWA Web App Manifest ─── -->
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#2e7d32" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- ─── دعم أجهزة iOS / Apple Safari ─── -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="خُضرة" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png" />
+    
+    <!-- ─── أيقونات الموقع (Favicon) ─── -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png" />
+    <link rel="icon" type="image/svg+xml" href="/images/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    
+    <!-- ─── Open Graph / Facebook / WhatsApp ─── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://khodrafresh.vercel.app/" />
+    <meta property="og:title" content="خُضرة - متجر الخضار والفواكه الطازجة" />
+    <meta property="og:description" content="متجر خُضرة لتسوق الخضروات والفواكه الطازجة ومنتجات البقالة مع التوصيل السريع في مدينة فاس ونواحيها والدفع عند الاستلام في المغرب" />
+    <meta property="og:image" content="https://khodrafresh.vercel.app/og-image.jpg" />
+    <meta property="og:locale" content="ar_MA" />
+    
+    <!-- ─── Twitter Cards ─── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://khodrafresh.vercel.app/" />
+    <meta name="twitter:title" content="خُضرة - متجر الخضار والفواكه الطازجة" />
+    <meta name="twitter:description" content="متجر خُضرة لتسوق الخضروات والفواكه الطازجة ومنتجات البقالة مع التوصيل السريع في مدينة فاس ونواحيها والدفع عند الاستلام في المغرب" />
+    <meta name="twitter:image" content="https://khodrafresh.vercel.app/og-image.jpg" />
+    
+    <!-- ─── Google Site Verification ─── -->
+    <meta name="google-site-verification" content="v6rbqN2Ha0Va0ev2EFSTMra_B6ZFbYaDdNebJlQrWdQ" />
+    <meta name="google-site-verification" content="MdOFiH456gNcPIlDkPMJlAcHGxHW2bEaji08AZOJBk8" />
+    
+    <!-- ─── تأجيل تحميل كود الطرف الثالث (Google Analytics) لإعطاء الأولوية لمحتوى الصفحة ─── -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      function loadAnalytics() {
+        if (window.__gaLoaded) return;
+        window.__gaLoaded = true;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VNL0B7G424';
+        document.head.appendChild(script);
+        script.onload = function() {
+          gtag('config', 'G-VNL0B7G424');
+        };
+      }
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() { setTimeout(loadAnalytics, 2500); });
+      } else {
+        window.addEventListener('load', function() { setTimeout(loadAnalytics, 2500); });
+      }
+      ['click', 'scroll', 'touchstart'].forEach(function(evt) {
+        window.addEventListener(evt, loadAnalytics, { once: true, passive: true });
+      });
+    </script>
+    
+    <!-- ─── Preconnect للتحميل السريع ─── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://ywoxhwvxsuowaiqbtqdr.supabase.co" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+    <!-- ─── Preload صورة الهيرو الأولى لسرعة الظهور LCP ─── -->
+    <link rel="preload" as="image" href="/images/hero-images/hero-1.webp" fetchpriority="high" />
+    
+    <!-- ─── Google Fonts ─── -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet" />
+    </noscript>
+    
+    <!-- ─── JSON-LD Structured Data (SEO) ─── -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://khodrafresh.vercel.app/#website",
+            "url": "https://khodrafresh.vercel.app/",
+            "name": "خُضرة",
+            "description": "متجر خضرة - خضروات، فواكه، ألبان وبقالة طازجة",
+            "inLanguage": "ar",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://khodrafresh.vercel.app/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "GroceryStore",
+            "@id": "https://khodrafresh.vercel.app/#business",
+            "name": "خُضرة",
+            "url": "https://khodrafresh.vercel.app/",
+            "logo": "https://khodrafresh.vercel.app/images/icons/web-app-manifest-512x512.png",
+            "image": "https://khodrafresh.vercel.app/og-image.jpg",
+            "telephone": "+212704274830",
+            "priceRange": "$$",
+            "currenciesAccepted": "MAD",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Fes",
+              "addressRegion": "Fès-Meknès",
+              "addressCountry": "MA"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Fes"
+            },
+            "paymentAccepted": ["Cash", "Bank Transfer"],
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "09:00",
+              "closes": "21:00"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://khodrafresh.vercel.app/#breadcrumbs",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "الرئيسية",
+                "item": "https://khodrafresh.vercel.app/"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#FFFDF8] text-[#2A2721] font-['Tajawal'] antialiased selection:bg-[#D9762B]/20 selection:text-[#B85E1C]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

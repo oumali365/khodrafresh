@@ -1,0 +1,10 @@
+{
+  "name": "khodra-store-v2",
+  "description": "متجر خُضرة لتسوق الخضروات والفواكه الطازجة ومنتجات البقالة مع التوصيل السريع في مدينة فاس ونواحيها والدفع عند الاستلام في المغرب",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
